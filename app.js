@@ -70,27 +70,27 @@ beyond(441);
 function decode(words){
 
   
-    let word = words.split(" ");
-    let sentence = [];
+  let word = words.split(" ");
+  let sentence = [];
 
-    for( let i=0; i< word.length; i++){
+  for( let i=0; i< word.length; i++){
 
-  let letter = word[i];
+    let letter = word[i];
     switch (letter[0]){
-      case "a":
+    case "a":
       sentence.push(letter[1]);
       break;
-      case "b":
-        sentence.push(letter[2]);
+    case "b":
+      sentence.push(letter[2]);
       break;
-      case "c":
-        sentence.push(letter[3]);
+    case "c":
+      sentence.push(letter[3]);
       break;
-      case "d":
-        sentence.push(letter[4]);
+    case "d":
+      sentence.push(letter[4]);
       break;
-      default:
-        sentence.push(" ") ;
+    default:
+      sentence.push(" ") ;
       break;
     }
     
@@ -101,3 +101,57 @@ function decode(words){
 
 let newletter = 'craft block argon meter bells brown croon droop'
 console.log(decode(newletter));
+
+// How many days in a month drill
+
+function daysInMonth(month, leapYear) {
+
+  let days = 0;
+
+  switch(month){
+  case 'January':
+    days = 31;
+    break;
+  case 'February':
+    days = 28;
+    break;
+  case 'March':
+    days = 31;
+    break;
+  case 'April':
+    days = 30;
+    break;
+  case 'May':
+    days = 31;
+    break;
+  case 'June':
+    days = 30;
+    break;
+  case 'July':
+    days = 31;
+    break;
+  case 'August':
+    days = 31;
+    break;
+  case 'September':
+    days = 30;
+    break;
+  case 'October':
+    days = 31;
+    break;
+  case 'November':
+    days = 30;
+    break;
+  case 'December':
+    days = 31;
+    break;
+  }
+
+  if (month === 'February' && leapYear === true) {
+    return `${month} has ${days+1} days.`;
+  }
+  return `${month} has ${days} days.`;
+}
+
+const monthStuff = daysInMonth("February", true);
+console.log(monthStuff);
