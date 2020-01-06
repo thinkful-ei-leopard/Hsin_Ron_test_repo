@@ -8,8 +8,7 @@ function getYearOfBirth(age) {
     throw new Error('Age cannot be negative!');
   }
 
-  let yearOfBirth = 2020 - age;
-  return yearOfBirth;
+  return 2020 - age;
 }
 
 function createGreeting (name, age){
@@ -24,13 +23,9 @@ function createGreeting (name, age){
 }
 
 try {
-  const greeting1 = createGreeting();
+  const greeting1 = createGreeting;
   console.log(greeting1('Hsin', 25));
 }
 catch(e) {
     // IF error occurs
 }
-
-const greeting1 = createGreeting;
-console.log(greeting1('Hsin', 25));
-// console.log(greeting1('Hsin', 25));
