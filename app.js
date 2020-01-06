@@ -3,8 +3,10 @@ let myTeam = 'Hsin and Ron';
 
 console.log(myTeam);
 
-function createGreeting (){
-    return 'Hi my name is Ron and Im 30 years old.';
+function createGreeting (name, age){
+    const yearOfBirth = 2020-age ;
+    return `I was born in ${yearOfBirth}`;
 }
 const greeting1 = createGreeting();
 console.log(greeting1);
+
