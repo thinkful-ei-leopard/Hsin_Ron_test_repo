@@ -3,10 +3,21 @@ let myTeam = 'Hsin and Ron';
 
 console.log(myTeam);
 
-function createGreeting (name, age){
-    const yearOfBirth = 2020-age ;
-    return `I was born in ${yearOfBirth}`;
+function getYearOfBirth(age) {
+  if (age < 0) {
+    throw new Error('Age cannot be negative!');
+  }
+  return yearOfBirth = 2020-age ;
 }
-const greeting1 = createGreeting();
-console.log(greeting1);
+function createGreeting (name, age){
+  const yob = getYearOfBirth(age);
+  return `I was born in ${yob}`;
+}
+try {
+  const greeting1 = createGreeting();
+}
+catch(e) {
+    // IF error occurs
+}
 
+console.log(greeting1);
