@@ -12,14 +12,14 @@ function getYearOfBirth(age) {
 }
 
 function createGreeting (name, age){
-    if(typeof name === 'undefined' || typeof age === 'undefined'){
-        throw new Error('Arguments not valid');
-    }
-    if(typeof age !== 'number' || typeof name !== 'string'){
+  if(typeof name === 'undefined' || typeof age === 'undefined'){
+    throw new Error('Arguments not valid');
+  }
+  if(typeof age !== 'number' || typeof name !== 'string'){
     throw new TypeError();
-    }
-    const yob = getYearOfBirth(age);
-    return `I was born in ${yob}`;
+  }
+  const yob = getYearOfBirth(age);
+  return `I was born in ${yob}`;
 }
 
 try {
@@ -27,7 +27,7 @@ try {
   console.log(greeting1('Hsin', 25));
 }
 catch(e) {
-    // IF error occurs
+  // IF error occurs
 }
 
 
@@ -35,11 +35,30 @@ catch(e) {
 // Jedi name drill
 
 function jediName(firstName, lastName) {
-    let newName = firstName.slice(0, 2);
-    let otherName = lastName.slice(0, 3);
-    let bestName = otherName + newName;
-    return bestName; 
+  let newName = firstName.slice(0, 2);
+  let otherName = lastName.slice(0, 3);
+  let bestName = otherName + newName;
+  return bestName; 
 }
 
 const jedi = jediName('Hsin', 'Ron');
 console.log(jedi);
+
+function beyond(num) {
+  if (isFinite(num)) { // is FINITE
+    if (num > 0) {
+      console.log('To infinity');
+    }
+    else if (num < 0) {
+      console.log('To negative infinity');
+    }
+  }
+  else if (num === 0) {
+    console.log('Staying home');
+  }
+  else if (!isFinite(num)){
+    console.log('And beyond');
+  }// is INFINITE
+}
+
+beyond(441);
