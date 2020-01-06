@@ -62,3 +62,42 @@ function beyond(num) {
 }
 
 beyond(441);
+
+
+
+//Cracking the code drill
+
+function decode(words){
+
+  
+    let word = words.split(" ");
+    let sentence = [];
+
+    for( let i=0; i< word.length; i++){
+
+  let letter = word[i];
+    switch (letter[0]){
+      case "a":
+      sentence.push(letter[1]);
+      break;
+      case "b":
+        sentence.push(letter[2]);
+      break;
+      case "c":
+        sentence.push(letter[3]);
+      break;
+      case "d":
+        sentence.push(letter[4]);
+      break;
+      default:
+        sentence.push(" ") ;
+      break;
+    }
+    
+  }  
+  return sentence.join("");
+}
+
+
+let newletter = 'craft block argon meter bells brown croon droop'
+console.log(decode(newletter));
