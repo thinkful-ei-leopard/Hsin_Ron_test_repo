@@ -155,3 +155,47 @@ function daysInMonth(month, leapYear) {
 
 const monthStuff = daysInMonth("February", true);
 console.log(monthStuff);
+
+// Rock Paper Scissors Drill
+
+function rockPaperScissors(num) {
+  // 1 = Rock
+  // 2 = Paper
+  // 3 = scissors
+  const randomNo = Math.floor(Math.random() * 3) + 1;  // the computers selection
+  
+  if(num === randomNo) {
+    return 'The result is a tie.';
+  }
+
+  if(num === 1) { // Our num is ROCK
+    if(randomNo === 2) { // They have paper
+      return 'Paper beats rock. You lose.';
+    }
+    else if(randomNo === 3) { // They have scissors
+      return 'Rock beats scissors. You win.';
+    }
+  }
+
+  if(num === 2) { // our num is PAPER
+    if(randomNo === 1) {  // they have rock
+      return 'Paper beats rock. You win.';
+    }
+    else if (randomNo === 3) {
+      return 'Scissors beats paper. You lose.';
+    }
+  }
+
+  if(num === 3){  // our num is SCISSORS
+    if(randomNo === 1) { // they have rock
+      return 'Rock beats scissors. You lose.';
+    }
+    else if(randomNo === 2){ // they have paper
+      return 'Scissors beats paper. You win.';
+    }
+  } 
+
+}
+
+const victor = rockPaperScissors(2);
+console.log(victor);
