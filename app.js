@@ -29,3 +29,17 @@ try {
 catch(e) {
     // IF error occurs
 }
+
+
+// Javascript Function Drills 2
+// Jedi name drill
+
+function jediName(firstName, lastName) {
+    let newName = firstName.slice(0, 2);
+    let otherName = lastName.slice(0, 3);
+    let bestName = otherName + newName;
+    return bestName; 
+}
+
+const jedi = jediName('Hsin', 'Ron');
+console.log(jedi);
