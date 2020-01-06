@@ -10,6 +10,14 @@ function getYearOfBirth(age) {
   return yearOfBirth = 2020-age ;
 }
 function createGreeting (name, age){
+if(typeOf name === "undefined" || typeOf age === "undefined"){
+    throw new Error(
+        'Arguments not valid';
+    )
+}
+if(typeof age !== "number" || typeof name !== "string"){
+   throw new TypeError() 
+}
   const yob = getYearOfBirth(age);
   return `I was born in ${yob}`;
 }
