@@ -70,32 +70,32 @@ beyond(441);
 function decode(words){
 
   
-  let word = words.split(" ");
+  let word = words.split(' ');
   let sentence = [];
 
   for( let i=0; i< word.length; i++){
 
     let letter = word[i];
     switch (letter[0]){
-    case "a":
+    case 'a':
       sentence.push(letter[1]);
       break;
-    case "b":
+    case 'b':
       sentence.push(letter[2]);
       break;
-    case "c":
+    case 'c':
       sentence.push(letter[3]);
       break;
-    case "d":
+    case 'd':
       sentence.push(letter[4]);
       break;
     default:
-      sentence.push(" ") ;
+      sentence.push(' ') ;
       break;
     }
     
   }  
-  return sentence.join("");
+  return sentence.join('');
 }
 
 
@@ -153,7 +153,7 @@ function daysInMonth(month, leapYear) {
   return `${month} has ${days} days.`;
 }
 
-const monthStuff = daysInMonth("February", true);
+const monthStuff = daysInMonth('February', true);
 console.log(monthStuff);
 
 // Rock Paper Scissors Drill
@@ -180,6 +180,7 @@ function rockPaperScissors(num) {
   if(num === 2) { // our num is PAPER
     if(randomNo === 1) {  // they have rock
       return 'Paper beats rock. You win.';
+
     }
     else if (randomNo === 3) {
       return 'Scissors beats paper. You lose.';
