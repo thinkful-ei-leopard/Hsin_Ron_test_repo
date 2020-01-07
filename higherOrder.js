@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable indent */
 // Higher Order Function Drills
 // done by Ron Martin
@@ -50,10 +51,40 @@ const filteredNames = filter(myNames, function(name) {
     return name[0] === 'R';
 });
 
-console.log(filteredNames) // => ['Rich', 'Ray']
+console.log(filteredNames); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
-console.log(myNames.filter(name => name[0] === 'J')); // Bonus Credit: Can you invoke the filter function 
-                                                      // and immediately log the result using a single line 
-                                                      // of code and arrow functions?
+console.log(myNames.filter(name => name[0] === 'J')); 
+// Bonus Credit: Can you invoke the filter function 
+// and immediately log the result using a single line 
+// of code and arrow functions?
 
 // Functions as return values
+function hazardWarningCreator(typeOfWarning) {
+    let warningCounter = 0;
+
+    return function(location){
+        warningCounter++;
+        console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+        if(warningCounter === 1) {
+            console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`);
+        }
+        else if(warningCounter === 0 || warningCounter >=2){
+            console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`);
+        }
+    };
+}
+
+// Creates 3 instances of Closure
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const flashFloodWarning = hazardWarningCreator('Flash flood warning!');
+const fireWarning = hazardWarningCreator('Out of control fires');
+// Invoking our new hazard warning closures
+rocksWarning('Main St and Pacific Ave'); 
+rocksWarning('Main St and 3rd');
+flashFloodWarning('Long Beach Drive and Central');
+fireWarning('Broadway and 2nd Street');
+fireWarning('Azure View and Sunpark');
+fireWarning('Big Rock Road and Mission Gorge');
+
+
+// forEach, filter, and map
