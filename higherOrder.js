@@ -88,3 +88,43 @@ fireWarning('Big Rock Road and Mission Gorge');
 
 
 // forEach, filter, and map
+const turtleMoves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+const turtleResults = turtleMoves.filter(movement => {
+    return movement[0] >= 0 && movement[1] >= 0;
+});
+console.log(turtleResults);
+
+const totalSteps = turtleMoves.map(moves => {
+    // Map creates a new array of integers with the total movement
+    // made each step. Using Math.abs to get the absolute value (no negative values)
+    return Math.abs(moves[0] + moves[1]);
+});
+console.log(`Total steps taken per movement: ${totalSteps}`);
+
+turtleMoves.forEach(function(move, index) {
+    let steps = Math.abs(move[0] + move[1]);
+    if (steps === 1){
+        console.log(`Movement #${index}: ${steps} step`);
+    }
+    console.log(`Movement #${index}: ${steps} steps`);
+});
+
+
+// Reduce
+let input1 = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+let inputArray = input1.split(' '); //converted our input into an array
+//console.log(inputArray);
+const newSentence = inputArray.reduce(function(total, currentWord){
+    let len = currentWord.length;
+    if(len === 3){
+        return total + ' ';
+    }
+    else {
+        return total + currentWord[len-1].toUpperCase();
+    }
+}, '');
+
+console.log(newSentence);
+
+
+
